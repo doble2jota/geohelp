@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,22 +20,47 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/app_bar"
             android:orientation="vertical"
-            android:weightSum="6">
+            android:weightSum="7">
 
             <RelativeLayout
                 android:id="@+id/layout_my_profile"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2">
+                android:padding="20dp"
+                android:layout_weight="3">
 
                 <ImageView
+                    android:id="@+id/img_my_profile"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/ic_profile"/>
+
+                <ImageView
+                    android:id="@+id/edit_my_profile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@id/img_my_profile"
+                    android:src="@drawable/ic_edit"
+                    android:visibility="invisible"/>
+
+                <com.example.javier.geohelp.Activities.Components.MenuTextView
+                    android:id="@+id/text_my_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"></ImageView>
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="Pepito Palote"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    custom:typefaceAsset="Roboto-Thin.ttf"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+
+
+
 
             </RelativeLayout>
 
@@ -44,16 +69,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:background="@color/orange_deep">
 
                 <ImageView
+                    android:id="@+id/img_help_someone"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"></ImageView>
+
+                <com.example.javier.geohelp.Activities.Components.MenuTextView
+                    android:id="@+id/text_help_someone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"></ImageView>
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/img_help_someone"
+                    android:text="@string/menu_help_someone"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    custom:typefaceAsset="basictitlefont.ttf"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_direction"></ImageView>
 
             </RelativeLayout>
 
@@ -62,25 +106,69 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:background="@color/green_soft">
 
                 <ImageView
+                    android:id="@+id/img_help_me"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"></ImageView>
+
+                <com.example.javier.geohelp.Activities.Components.MenuTextView
+                    android:id="@+id/text_help_me"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"></ImageView>
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/img_help_me"
+                    android:text="@string/menu_help_me"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    custom:typefaceAsset="basictitlefont.ttf"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_direction"></ImageView>
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/layout_profile"
+                android:id="@+id/layout_my_helps"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:background="@color/pink_soft">
 
                 <ImageView
+                    android:id="@+id/img_my_helps"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"></ImageView>
+
+                <com.example.javier.geohelp.Activities.Components.MenuTextView
+                    android:id="@+id/text_my_helps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"></ImageView>
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/img_my_helps"
+                    android:text="@string/menu_my_helps"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    custom:typefaceAsset="basictitlefont.ttf"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_direction"></ImageView>
             </RelativeLayout>
 
             <RelativeLayout
@@ -88,12 +176,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:background="@color/blue_soft">
 
                 <ImageView
+                    android:id="@+id/img_settings"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"></ImageView>
+
+                <com.example.javier.geohelp.Activities.Components.MenuTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"></ImageView>
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/img_settings"
+                    android:text="@string/menu_settings"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    custom:typefaceAsset="basictitlefont.ttf"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_direction"></ImageView>
+
             </RelativeLayout>
 
         </LinearLayout>
@@ -101,12 +211,5 @@
     </RelativeLayout>
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
 
 </android.support.design.widget.CoordinatorLayout>
