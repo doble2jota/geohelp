@@ -5,14 +5,17 @@ package com.example.javier.geohelp.Activities.Entities;
  */
 public class UserEntity {
 
-    public UserEntity(String userName, String passName) {
-        this.userName = userName;
-        this.passName = passName;
+    public UserEntity(String userName, String pass) {
+        this.emailUser = userName;
+        this.pass = pass;
 
     }
-
-    private String userName;
-    private String passName;
+    public UserEntity() {
+    }
+    private String emailUser;
+    private String pass;
+    private String firstName;
+    private String lastName;
     private String userUID;
 
     public String getUserUID() {
@@ -24,19 +27,35 @@ public class UserEntity {
     }
 
 
-    public String getUserName() {
-        return userName;
+    public String getEmailUser() {
+        return emailUser;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmailUser(String emailUser) {
+        this.emailUser = emailUser;
     }
 
-    public String getPassName() {
-        return passName;
+    public String getPass() {
+        return pass;
     }
 
-    public void setPassName(String passName) {
-        this.passName = passName;
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

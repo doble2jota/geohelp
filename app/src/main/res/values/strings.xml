@@ -9,4 +9,17 @@
     <!-- home -->
     <string name="title_home">GeoHelp ayuda</string>
 
+
+    <!-- Login y registro -->
+
+
+    <string name="create_user_password">Contraseña</string>
+    <string name="create_user_confirm_password">Confirmar contraseña</string>
+    <string name="create_user_lasttname">Apellidos</string>
+    <string name="create_user_firsttname">Nombre</string>
+    <string name="login_email">Correo electrónico</string>
+    <string name="create_user_confirm">Confirmar</string>
+    <string name="header_user_confirm">Verificación de contraseña</string>
+    <string name="header_user_data">Datos de usuario</string>
+
 </resources>

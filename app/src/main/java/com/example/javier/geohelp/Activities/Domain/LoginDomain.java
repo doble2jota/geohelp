@@ -3,6 +3,7 @@ package com.example.javier.geohelp.Activities.Domain;
 import android.util.Log;
 
 import com.example.javier.geohelp.Activities.Entities.UserEntity;
+import com.example.javier.geohelp.Activities.Interactors.Events.CreateUserEvent;
 import com.example.javier.geohelp.Activities.Interactors.Events.UserEvent;
 import com.example.javier.geohelp.Activities.Utils.EventBusUtil;
 import com.example.javier.geohelp.Activities.Utils.GeoHelpConstans;
@@ -28,15 +29,15 @@ public class LoginDomain {
 
     public boolean createUser(final UserEntity userEntity){
 
-        firebase.createUser(userEntity.getUserName(), userEntity.getPassName(), new Firebase.ValueResultHandler<Map<String, Object>>() {
+        firebase.createUser(userEntity.getEmailUser(), userEntity.getPass(), new Firebase.ValueResultHandler<Map<String, Object>>() {
             @Override
             public void onSuccess(Map<String, Object> result) {
                 LogUtil.d("", "Successfully created user account with uid: " + result.get("uid"));
                 userEntity.setUserUID(result.get("uid").toString());
                 manageRegisterUser(userEntity);
-                UserEvent userEvent = new UserEvent();
-                userEvent.setTAG("");
-                EventBusUtil.postSticky(userEvent);
+                CreateUserEvent createUserEvent = new CreateUserEvent();
+                createUserEvent.setTAG("");
+                EventBusUtil.postSticky(createUserEvent);
                 responseCreation = true;
             }
 
@@ -52,11 +53,11 @@ public class LoginDomain {
     }
     public  boolean loginUser(final UserEntity userEntity){
 
-        firebase.authWithPassword(userEntity.getUserName(), userEntity.getPassName(), new Firebase.AuthResultHandler() {
+        firebase.authWithPassword(userEntity.getEmailUser(), userEntity.getPass(), new Firebase.AuthResultHandler() {
             @Override
             public void onAuthenticated(AuthData authData) {
                 LogUtil.d("", "User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
-                LogUtil.d("UID",""+ authData.getUid().toString());
+                LogUtil.d("UID", "" + authData.getUid().toString());
                 manageRegisterUser(userEntity);
                 UserEvent userEvent = new UserEvent();
                 userEvent.setTAG("");
@@ -85,14 +86,11 @@ public class LoginDomain {
     }
 
     private void manageRegisterUser(UserEntity userEntity){
-
         SharedPref sharedPref = new SharedPref();
         sharedPref.preparePreferences();
-        sharedPref.saveElement(GeoHelpConstans.USER_MAIL_PREFS, userEntity.getUserName());
-        sharedPref.saveElement(GeoHelpConstans.PASS_PREFS, userEntity.getPassName());
+        sharedPref.saveElement(GeoHelpConstans.USER_MAIL_PREFS, userEntity.getEmailUser());
+        sharedPref.saveElement(GeoHelpConstans.PASS_PREFS, userEntity.getPass());
         sharedPref.saveElement(GeoHelpConstans.USER_UID, userEntity.getUserUID());
-
         sharedPref.commitPreferences();
     }
-
 }

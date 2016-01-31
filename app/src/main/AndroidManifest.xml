@@ -19,7 +19,11 @@
             android:label="@string/app_name"
             android:theme="@style/AppThemeCreate">
         </activity>
-
+        <activity
+            android:name=".Activities.CreateUserActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeCreate">
+        </activity>
         <activity
             android:name=".Activities.LoginActivity"
             android:label="@string/app_name"

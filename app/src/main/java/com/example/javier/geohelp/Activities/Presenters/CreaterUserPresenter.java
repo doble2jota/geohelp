@@ -3,9 +3,9 @@ package com.example.javier.geohelp.Activities.Presenters;
 import com.example.javier.geohelp.Activities.Interactors.Events.GenericServerErrorEvent;
 
 /**
- * Created by javier on 30/01/2016.
+ * Created by javier on 31/01/2016.
  */
-public interface LoginPresenter  extends Presenter {
+public interface CreaterUserPresenter extends Presenter {
 
     void onEventMainThread(GenericServerErrorEvent genericServerErrorEvent);
 }

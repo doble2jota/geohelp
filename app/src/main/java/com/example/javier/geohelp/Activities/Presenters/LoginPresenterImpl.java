@@ -2,7 +2,6 @@ package com.example.javier.geohelp.Activities.Presenters;
 
 import com.example.javier.geohelp.Activities.Entities.UserEntity;
 import com.example.javier.geohelp.Activities.Interactors.CheckUserLoginInteractor;
-import com.example.javier.geohelp.Activities.Interactors.CreateUserInteractor;
 import com.example.javier.geohelp.Activities.Interactors.Events.GenericServerErrorEvent;
 import com.example.javier.geohelp.Activities.Interactors.Events.HomeEvent;
 import com.example.javier.geohelp.Activities.Interactors.Events.UserEvent;
@@ -25,9 +24,7 @@ public class LoginPresenterImpl extends PresenterImpl implements Presenter,Login
         new LoginUserInteractor(userEntity).execute();
     }
 
-    public void createUser(UserEntity userEntity){
-        new CreateUserInteractor(userEntity).execute();
-    }
+
     public void checkUserLogin(){
         new CheckUserLoginInteractor().execute();
     }

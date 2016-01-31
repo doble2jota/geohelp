@@ -29,6 +29,8 @@
     <color name="pink_soft">#b25986</color>
     <color name="blue_soft">#FF507fb6</color>
 
+    <!-- Color Login-->
+    <color name="gray_header">#969696</color>
 
 </resources>
 

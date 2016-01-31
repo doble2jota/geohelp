@@ -65,8 +65,15 @@ public class LoginActivity extends AbstractActivity<LoginPresenter> implements L
                 UserEntity userEntity = new UserEntity(username.getText().toString(),pass.getText().toString());
                 loginPresenter.loginUser(userEntity);
         }else if(v.getId() == R.id.create_user){
+            goToActivityCreateUser();
+        /*
             UserEntity userEntity = new UserEntity(username.getText().toString(),pass.getText().toString());
-            loginPresenter.createUser(userEntity);
+            loginPresenter.createUser(userEntity);*/
         }
+    }
+
+    public void goToActivityCreateUser(){
+        Intent intent = new Intent(this,CreateUserActivity.class);
+        startActivity(intent);
     }
 }
