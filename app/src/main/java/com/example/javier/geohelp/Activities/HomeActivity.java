@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.example.javier.geohelp.Activities.Presenters.HomePresenter;
@@ -50,24 +52,19 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
         myView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //http://stackoverflow.com/questions/21954515/animations-appear-rotate-and-disappear
+                Animation slideUp = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+                Animation slideDown = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 
-// get the center for the clipping circle
-                int cx = (myView.getLeft() + myView.getRight()) / 2;
-                int cy = (myView.getTop() + myView.getBottom()) / 2;
+                if(myView.getVisibility()==View.INVISIBLE) {
 
-// get the final radius for the clipping circle
-                int finalRadius = Math.max(myView.getWidth(), myView.getHeight());
-
-// create the animator for this view (the start radius is zero)
-                Animator anim =
-                        ViewAnimationUtils.createCircularReveal(myView, cx, cy, 0, finalRadius);
-
-// make the view visible and start the animation
-                myView.setVisibility(View.VISIBLE);
-                anim.start();
-
-// start the animation
-               // anim.start();
+                    myView.startAnimation(slideUp);
+                    myView.setVisibility(View.VISIBLE);
+                }
+                else {
+                    myView.startAnimation(slideDown);
+                    myView.setVisibility(View.INVISIBLE);
+                }
             }
         });
 
