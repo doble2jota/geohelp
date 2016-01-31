@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_below="@+id/app_bar"
+        android:id="@+id/layout_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+
+        <com.example.javier.geohelp.Activities.Components.EmailEditText
+            android:id="@+id/correo_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true">
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Correo Electrónico"
+                />
+        </com.example.javier.geohelp.Activities.Components.EmailEditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/layout_username"
+        android:id="@+id/layout_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/rw"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                />
+        </android.support.design.widget.TextInputLayout>
+    </RelativeLayout>
+
+
+
+
+
+<LinearLayout
+        android:layout_below="@id/layout_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout">
+    <Button
+
+        android:id="@+id/create_user"
+        android:layout_width="wrap_content"
+        android:text="create"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/login_user"
+        android:text="login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        />
+
+    </LinearLayout>
+</RelativeLayout>

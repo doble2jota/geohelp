@@ -13,8 +13,51 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="GeohelpBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/AppBaseTheme.ActionMode</item>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+        <!-- Estas dos líneas evitarían la doble línea de los edittext en la API 21 (5.0.0)-->
+        <item name="editTextStyle">@style/Widget.Material.EditText</item>
+    </style>
+
+    <style name="AppBaseTheme.ActionMode" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="background">@color/Geohelp_blue</item>
+    </style>
+
+    <style name="AppThemeLogin" parent="GeohelpBaseTheme">
+        <item name="colorPrimary">@color/Geohelp_login_gray_text</item>
+        <item name="colorPrimaryDark">@color/Geohelp_login_gray_text</item>
+        <item name="colorAccent">@color/Geohelp_login_gray_text</item>
+        <item name="colorControlNormal">@color/Geohelp_login_gray_text</item>
+        <item name="colorControlActivated">@color/Geohelp_login_gray_text</item>
+        <item name="colorControlHighlight">@color/Geohelp_login_gray_text</item>
+    </style>
+
+    <style name="AppThemeCreate" parent="GeohelpBaseTheme">
+        <item name="colorPrimary">@color/GeoHelp_primary</item>
+        <item name="colorPrimaryDark">@color/GeoHelp_primary_dark</item>
+        <item name="colorAccent">@color/GeoHelp_accent</item>
+        <item name="colorControlNormal">@color/Geohelp_login_gray_text</item>
+        <item name="colorControlActivated">@color/Geohelp_login_gray_text</item>
+        <item name="colorControlHighlight">@color/Geohelp_login_gray_text</item>
+    </style>
+
+    <style name="AppBarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">#FFF</item>
+        <item name="android:textColorSecondary">#FFF</item>
+    </style>
+
+    <style name="Widget">
+        <item name="android:textAppearance">?android:textAppearance</item>
+    </style>
+    <style name="Material" />
+    <style name="Material.Light" />
+    <style name="Widget.Material" parent="Widget" />
+
+    <!-- EditText -->
+    <style name="Widget.Material.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textCursorDrawable">?android:attr/textCursorDrawable</item>
+    </style>
 
 </resources>
