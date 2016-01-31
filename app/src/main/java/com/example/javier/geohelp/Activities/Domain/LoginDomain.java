@@ -38,6 +38,7 @@ public class LoginDomain {
                 CreateUserEvent createUserEvent = new CreateUserEvent();
                 createUserEvent.setTAG("");
                 EventBusUtil.postSticky(createUserEvent);
+                saveUserPersistence(userEntity);
                 responseCreation = true;
             }
 
@@ -92,5 +93,11 @@ public class LoginDomain {
         sharedPref.saveElement(GeoHelpConstans.PASS_PREFS, userEntity.getPass());
         sharedPref.saveElement(GeoHelpConstans.USER_UID, userEntity.getUserUID());
         sharedPref.commitPreferences();
+    }
+
+
+    private void saveUserPersistence(UserEntity userEntity){
+        firebase = firebase.child("users").child(userEntity.getUserUID().toString());
+        firebase.setValue(userEntity);
     }
 }
