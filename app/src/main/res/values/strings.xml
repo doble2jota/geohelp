@@ -8,5 +8,9 @@
 
     <!-- home -->
     <string name="title_home">GeoHelp ayuda</string>
+    <string name="menu_help_someone">Ayudar a alguien</string>
+    <string name="menu_help_me">Necesito ayuda</string>
+    <string name="menu_my_helps">Mis ayudas</string>
+    <string name="menu_settings">Ajustes</string>
 
 </resources>
