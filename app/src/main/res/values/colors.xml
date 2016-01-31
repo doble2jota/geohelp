@@ -14,14 +14,21 @@
 
 
     <!-- colores principales de la aplicacion creados desde material -->
-        <color name="GeoHelp_primary">#3F51B5</color>
-        <color name="GeoHelp_primary_dark">#303F9F</color>
-        <color name="GeoHelp_primary_light">#C5CAE9</color>
-        <color name="GeoHelp_accent">#536DFE</color>
-        <color name="GeoHelp_primary_text">#212121</color>
-        <color name="GeoHelp_secondary_text">#727272</color>
-        <color name="GeoHelp_icons">#FFFFFF</color>
-        <color name="GeoHelp_divider">#B6B6B6</color>
+    <color name="GeoHelp_primary">#3F51B5</color>
+    <color name="GeoHelp_primary_dark">#303F9F</color>
+    <color name="GeoHelp_primary_light">#C5CAE9</color>
+    <color name="GeoHelp_accent">#536DFE</color>
+    <color name="GeoHelp_primary_text">#212121</color>
+    <color name="GeoHelp_secondary_text">#727272</color>
+    <color name="GeoHelp_icons">#FFFFFF</color>
+    <color name="GeoHelp_divider">#B6B6B6</color>
+
+    <!-- Colores menu home-->
+    <color name="orange_deep">#dd9d72</color>
+    <color name="green_soft">#5aa095</color>
+    <color name="pink_soft">#b25986</color>
+    <color name="blue_soft">#FF507fb6</color>
+
 
 </resources>
 
