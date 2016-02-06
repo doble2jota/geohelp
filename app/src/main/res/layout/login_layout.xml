@@ -24,6 +24,7 @@
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:text="prueba@prueba.com"
                 android:hint="Correo Electrónico"
                 />
         </com.example.javier.geohelp.Activities.Components.EmailEditText>
@@ -47,6 +48,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="prueba"
                 android:hint="Contraseña"
                 />
         </android.support.design.widget.TextInputLayout>

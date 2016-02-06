@@ -26,4 +26,9 @@
     <string name="header_user_confirm">Verificación de contraseña</string>
     <string name="header_user_data">Datos de usuario</string>
 
+
+    <!-- Settings-->
+    <string name="title_settings">Ajustes</string>
+    <string name="logout_user">Cerrar sesión</string>
+
 </resources>

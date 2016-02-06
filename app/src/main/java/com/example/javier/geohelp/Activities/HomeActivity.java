@@ -1,33 +1,35 @@
 package com.example.javier.geohelp.Activities;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.javier.geohelp.Activities.Presenters.HomePresenter;
 import com.example.javier.geohelp.Activities.Presenters.HomePresenterImpl;
 import com.example.javier.geohelp.R;
 import com.firebase.client.Firebase;
 
-public class HomeActivity extends AbstractActivity<HomePresenter> implements HomeView {
+public class HomeActivity extends AbstractActivity<HomePresenter> implements HomeView, View.OnClickListener {
     private String FIREBASE_URL = "https://amber-torch-3957.firebaseio.com/";
     private String FIREBASE_USERNAME = "username";
     private String FIREBASE_PASS = "pass";
+    private RelativeLayout layout_settings;
 
     Firebase firebase;
     Firebase firebase1;
-
+    ImageView myView;
+    ImageView myView2;
+    Animation slideUp ;
+    Animation slideDown;
     private HomePresenterImpl homePresenter;
 
 
@@ -44,35 +46,20 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        super.setTextToolbar(R.string.title_home, R.color.background_floating_material_dark);
 
-        // previously visible view
-        final ImageView myView = (ImageView) findViewById(R.id.edit_my_profile);
-
-        final ImageView myView2 = (ImageView) findViewById(R.id.img_my_profile);
-        myView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //http://stackoverflow.com/questions/21954515/animations-appear-rotate-and-disappear
-                Animation slideUp = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-                Animation slideDown = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-
-                if(myView.getVisibility()==View.INVISIBLE) {
-
-                    myView.startAnimation(slideUp);
-                    myView.setVisibility(View.VISIBLE);
-                }
-                else {
-                    myView.startAnimation(slideDown);
-                    myView.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
+        slideUp = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+        slideDown = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 
 
-    /*    Firebase ref = new Firebase(GeoHelpConstans.URL_FIREBASE);
-        Firebase alanRef = ref.child("users").child("alanisawesome");
-        UserEntity alan = new UserEntity("Alan Turing", "19122");
-        alanRef.setValue(alan);*/
+        layout_settings= (RelativeLayout)findViewById(R.id.layout_settings);
+        myView= (ImageView)findViewById(R.id.edit_my_profile);
+        myView2= (ImageView)findViewById(R.id.img_my_profile);
+
+        layout_settings.setOnClickListener(this);
+        myView.setOnClickListener(this);
+        myView2.setOnClickListener(this);
+
 
 /*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -84,10 +71,21 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
             }
         });*/
 
-        super.setTextToolbar(R.string.title_home, R.color.background_floating_material_dark);
-
+    }
+    private void manageClickAnimation(){
+        if (myView.getVisibility() == View.INVISIBLE) {
+            myView.startAnimation(slideUp);
+            myView.setVisibility(View.VISIBLE);
+        } else {
+            myView.startAnimation(slideDown);
+            myView.setVisibility(View.INVISIBLE);
+        }
     }
 
+    private void goToActivity(Class<?> className){
+        startActivity(new Intent(this, className));
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -110,4 +108,30 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.edit_my_profile:
+
+                break;
+            case R.id.img_my_profile:
+                manageClickAnimation();
+                break;
+            case R.id.layout_settings:
+                goToActivity(SettingsActivity.class);
+                break;
+            default:
+                break;
+        }
+    }
+    @Override
+    public void onPause(){
+        super.onPause();
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
+
 }

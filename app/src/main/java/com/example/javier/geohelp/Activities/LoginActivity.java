@@ -48,6 +48,7 @@ public class LoginActivity extends AbstractActivity<LoginPresenter> implements L
     }
 
 
+
     @Override
     public void startActivy() {
         Intent intent = new Intent(this,HomeActivity.class);
@@ -76,4 +77,14 @@ public class LoginActivity extends AbstractActivity<LoginPresenter> implements L
         Intent intent = new Intent(this,CreateUserActivity.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
+
 }

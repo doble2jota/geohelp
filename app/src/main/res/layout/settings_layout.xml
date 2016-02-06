@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar" />
+
+
+        <RelativeLayout
+            android:id="@+id/layout_logout"
+            android:layout_below="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@color/orange_deep">
+
+
+
+            <com.example.javier.geohelp.Activities.Components.MenuTextView
+                android:id="@+id/text_help_someone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/img_help_someone"
+                android:text="@string/logout_user"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                custom:typefaceAsset="basictitlefont.ttf"/>
+
+
+
+        </RelativeLayout>
+
+        </RelativeLayout>
+
+</RelativeLayout>

@@ -36,7 +36,7 @@ public class PresenterImpl implements Presenter {
 
     @Override
     public void onPause() {
-        if(EventBus.getDefault().isRegistered(this))return;
+        if(EventBus.getDefault().isRegistered(this))
         EventBus.getDefault().unregister(this);
         Log.d("LifeCycle","onPause");
     }

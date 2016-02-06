@@ -46,25 +46,25 @@ public abstract class AbstractActivity<P extends Presenter> extends AppCompatAct
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.onStart();
+        presenter.onResume();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        presenter.onStart();
+        presenter.onStop();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        presenter.onStart();
+        presenter.onPause();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        presenter.onStart();
+        presenter.onDestroy();
     }
 
     //  @Override

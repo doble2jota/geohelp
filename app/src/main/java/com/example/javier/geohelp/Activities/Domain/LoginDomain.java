@@ -5,7 +5,6 @@ import android.util.Log;
 import com.example.javier.geohelp.Activities.Entities.UserEntity;
 import com.example.javier.geohelp.Activities.Interactors.Events.CreateUserEvent;
 import com.example.javier.geohelp.Activities.Interactors.Events.UserEvent;
-import com.example.javier.geohelp.Activities.Utils.EventBusUtil;
 import com.example.javier.geohelp.Activities.Utils.GeoHelpConstans;
 import com.example.javier.geohelp.Activities.Utils.LogUtil;
 import com.example.javier.geohelp.Activities.Utils.SharedPref;
@@ -15,10 +14,13 @@ import com.firebase.client.FirebaseError;
 
 import java.util.Map;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by javier on 24/01/2016.
  */
 public class LoginDomain {
+    public final static String LOGOUT="LOGOUT_USER";
 
     private String URL_FIREBASE = GeoHelpConstans.URL_FIREBASE;
     private boolean responseCreation = false;
@@ -37,7 +39,7 @@ public class LoginDomain {
                 manageRegisterUser(userEntity);
                 CreateUserEvent createUserEvent = new CreateUserEvent();
                 createUserEvent.setTAG("");
-                EventBusUtil.postSticky(createUserEvent);
+                EventBus.getDefault().post(createUserEvent);
                 saveUserPersistence(userEntity);
                 responseCreation = true;
             }
@@ -62,7 +64,7 @@ public class LoginDomain {
                 manageRegisterUser(userEntity);
                 UserEvent userEvent = new UserEvent();
                 userEvent.setTAG("");
-                EventBusUtil.postSticky(userEvent);
+                EventBus.getDefault().post(userEvent);
                 responseLogin = true;
             }
 
@@ -75,20 +77,34 @@ public class LoginDomain {
         return responseLogin;
     }
 
+
+    public boolean logoutUser(){
+        SharedPref sharedPref = new SharedPref();
+        sharedPref.preparePreferences(sharedPref.USER_DATA);
+
+        if(sharedPref.existElement(GeoHelpConstans.USER_MAIL_PREFS)){
+            sharedPref.removeAllPreferences();
+            UserEvent userEvent = new UserEvent();
+            userEvent.setTAG(LOGOUT);
+            EventBus.getDefault().post(userEvent);
+            return true;
+        }else return false;
+    }
+
     public boolean checkUserLogin(){
-       SharedPref sharedPref = new SharedPref();
-        sharedPref.preparePreferences();
+        SharedPref sharedPref = new SharedPref();
+        sharedPref.preparePreferences(sharedPref.USER_DATA);
         if(sharedPref.existElement(GeoHelpConstans.USER_MAIL_PREFS)){
             UserEvent userEvent = new UserEvent();
             userEvent.setTAG("");
-            EventBusUtil.postSticky(userEvent);
+            EventBus.getDefault().post(userEvent);
             return true;
         }else return false;
     }
 
     private void manageRegisterUser(UserEntity userEntity){
         SharedPref sharedPref = new SharedPref();
-        sharedPref.preparePreferences();
+        sharedPref.preparePreferences(sharedPref.USER_DATA);
         sharedPref.saveElement(GeoHelpConstans.USER_MAIL_PREFS, userEntity.getEmailUser());
         sharedPref.saveElement(GeoHelpConstans.PASS_PREFS, userEntity.getPass());
         sharedPref.saveElement(GeoHelpConstans.USER_UID, userEntity.getUserUID());

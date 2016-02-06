@@ -8,14 +8,16 @@ import android.content.SharedPreferences;
  */
 public class SharedPref {
 
+    public static final String USER_DATA = "USER_DATA";
+
     Context context ;
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 
-    public void preparePreferences(){
+    public void preparePreferences(String namePreferences){
 
         context = GeoHelpApplication.get().getApplicationContext();
-        prefs = context.getSharedPreferences("myPref", Context.MODE_PRIVATE);
+        prefs = context.getSharedPreferences(namePreferences, Context.MODE_PRIVATE);
         editor = prefs.edit();
     }
 
@@ -28,6 +30,9 @@ public class SharedPref {
         String correo = prefs.getString(key, value);
     }
 
+    public void removeAllPreferences(){
+        prefs.edit().clear().commit();
+    }
     public void commitPreferences(){
         editor.commit();
     }
