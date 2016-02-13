@@ -31,4 +31,8 @@
     <string name="title_settings">Ajustes</string>
     <string name="logout_user">Cerrar sesión</string>
 
+
+    <!-- Help someone-->
+    <string name="title_tab_list">Lista</string>
+    <string name="title_tab_map">Mapa</string>
 </resources>

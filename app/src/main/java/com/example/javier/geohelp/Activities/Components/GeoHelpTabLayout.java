@@ -1,35 +1,34 @@
 package com.example.javier.geohelp.Activities.Components;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Paint;
-import android.graphics.Typeface;
+import android.support.design.widget.TabLayout;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.widget.TextView;
-
-import com.example.javier.geohelp.R;
 
 /**
- * Created by raquel on 31/01/2016.
+ * Created by javier on 13/02/2016.
  */
-public class MenuTextView extends TextView {
-    public  MenuTextView(Context context) {
-        this(context, null);
+//// TODO: 13/02/2016 revisar 
+public class GeoHelpTabLayout extends TabLayout {
+
+    public GeoHelpTabLayout(Context context) {
+        super(context);
     }
 
-    public MenuTextView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-        setTextFont(context, attrs);
+    public GeoHelpTabLayout(Context context, AttributeSet attrs) {
+        super(context, attrs);
     }
 
-    public MenuTextView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        setTextFont(context, attrs);
+    public GeoHelpTabLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    private void init(){
+
     }
 
 
-    private void setTextFont(Context context, AttributeSet attrs){
+    //// TODO: 13/02/2016   
+   /* private void setTextFont(Context context, AttributeSet attrs){
         if (isInEditMode())
             return;
 
@@ -39,7 +38,7 @@ public class MenuTextView extends TextView {
             if (fontAsset != null && !fontAsset.isEmpty()) {
                 Typeface tf = Typeface.createFromAsset(getResources().getAssets(), fontAsset);
                 int style = Typeface.NORMAL;
-                float size = getTextSize();
+                    
                 if (getTypeface() != null)
                     style = getTypeface().getStyle();
                 if (tf != null) {
@@ -52,5 +51,7 @@ public class MenuTextView extends TextView {
                     Log.d("FontText", String.format("Could not create a font from asset: %s", fontAsset));
             }
         }
-    }
+    }*/
+
+
 }

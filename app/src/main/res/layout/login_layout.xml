@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/GeoHelp_primary">
+
+
+    <com.example.javier.geohelp.Activities.Components.GeoHelpTextView
+        android:layout_below="@+id/app_bar"
+        android:id="@+id/geo_login_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:text="CACACACA"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        custom:typefaceAsset="Roboto-Bold.ttf.ttf"/>
 
     <RelativeLayout
-        android:layout_below="@+id/app_bar"
+        android:layout_below="@+id/geo_login_name"
         android:id="@+id/layout_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,13 +35,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="prueba@prueba.com"
                 android:hint="Correo Electrónico"
+                android:textColor="@color/white"
+                android:text="prueba@prueba.com"
+                android:textColorHint="@color/white"
                 />
         </com.example.javier.geohelp.Activities.Components.EmailEditText>
     </RelativeLayout>
@@ -49,6 +69,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="prueba"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:hint="Contraseña"
                 />
         </android.support.design.widget.TextInputLayout>
@@ -58,27 +80,30 @@
 
 
 
-<LinearLayout
+    <LinearLayout
         android:layout_below="@id/layout_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout">
-    <Button
+        <Button
 
-        android:id="@+id/create_user"
-        android:layout_width="wrap_content"
-        android:text="create"
-        android:layout_height="wrap_content" />
+            android:id="@+id/create_user"
+            android:layout_width="wrap_content"
+            android:text="create"
+            android:layout_height="wrap_content" />
 
 
-    <Button
-        android:id="@+id/login_user"
-        android:text="login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        />
+        <Button
+            android:id="@+id/login_user"
+            android:text="login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            />
 
     </LinearLayout>
+
+
+
 </RelativeLayout>

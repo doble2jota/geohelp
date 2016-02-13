@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.javier.geohelp.Activities.Components.EmailEditText;
 import com.example.javier.geohelp.Activities.Entities.UserEntity;
 import com.example.javier.geohelp.Activities.Presenters.LoginPresenter;
 import com.example.javier.geohelp.Activities.Presenters.LoginPresenterImpl;
@@ -21,6 +22,7 @@ public class LoginActivity extends AbstractActivity<LoginPresenter> implements L
     private EditText pass;
     private Button createUser;
     private Button loginUser;
+    private EmailEditText emailEditText;
 
     private LoginPresenterImpl loginPresenter;
 
@@ -42,6 +44,8 @@ public class LoginActivity extends AbstractActivity<LoginPresenter> implements L
         pass = (EditText) findViewById(R.id.password);
         createUser = (Button) findViewById(R.id.create_user);
         loginUser = (Button) findViewById(R.id.login_user);
+        (emailEditText=(EmailEditText)findViewById(R.id.correo_parent)).init();
+
         createUser.setOnClickListener(this);
         loginUser.setOnClickListener(this);
 

@@ -51,8 +51,10 @@ public class SettingsActivity extends AbstractActivity<SettingPresenter> impleme
     }
 
     private void goToActivity(Class<?> className) {
-        startActivity(new Intent(this, className));
-
+        Intent intent = new Intent(this, className);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 
     @Override
@@ -68,4 +70,5 @@ public class SettingsActivity extends AbstractActivity<SettingPresenter> impleme
     public void onResume(){
         super.onResume();
     }
+
 }

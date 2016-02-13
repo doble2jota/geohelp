@@ -23,6 +23,7 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
     private String FIREBASE_USERNAME = "username";
     private String FIREBASE_PASS = "pass";
     private RelativeLayout layout_settings;
+    private RelativeLayout layout_help_someone;
 
     Firebase firebase;
     Firebase firebase1;
@@ -51,11 +52,12 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
         slideUp = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
         slideDown = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 
-
+        layout_help_someone=(RelativeLayout)findViewById(R.id.layout_help_someone);
         layout_settings= (RelativeLayout)findViewById(R.id.layout_settings);
         myView= (ImageView)findViewById(R.id.edit_my_profile);
         myView2= (ImageView)findViewById(R.id.img_my_profile);
 
+        layout_help_someone.setOnClickListener(this);
         layout_settings.setOnClickListener(this);
         myView.setOnClickListener(this);
         myView2.setOnClickListener(this);
@@ -113,10 +115,13 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.edit_my_profile:
-
                 break;
+
             case R.id.img_my_profile:
                 manageClickAnimation();
+                break;
+            case R.id.layout_help_someone:
+                goToActivity(HelpSomeoneActivity.class);
                 break;
             case R.id.layout_settings:
                 goToActivity(SettingsActivity.class);
