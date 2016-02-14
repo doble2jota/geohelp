@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+ <RelativeLayout
+     android:id="@+id/r1"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+        <TextView
+
+            android:id="@+id/category"
+            android:drawableLeft="@android:drawable/ic_menu_share"
+            android:paddingLeft="70dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Categoría"
+            android:textColor="#ff7e7e7e" />
+ </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout2">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/user_image"
+            android:src="@drawable/ic_profile"
+            android:layout_alignParentTop="false"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.10" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Título"
+            android:id="@+id/title_help"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/user_image"/>
+</RelativeLayout>
+</RelativeLayout>

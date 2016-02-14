@@ -4,18 +4,43 @@ package com.example.javier.geohelp.Activities.Entities;
  * Created by raquel on 13/02/2016.
  */
 
+import java.util.List;
+
 /**
  * Entidad que modela las ayudas de la base de datos
  */
 public class HelpEntity {
 
+
+
+
+    List<HelpEntity> help;
     private int id;
     private String idUser;
     private String nombre;
     private String descripción;
     private int tipo;
+    private String category;
     private long aLat;
     private long aLong;
+
+    public int getIdImagen() {
+        return idImagen;
+    }
+
+    public void setIdImagen(int idImagen) {
+        this.idImagen = idImagen;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    private int idImagen;
 
 
     public HelpEntity() {
@@ -85,6 +110,14 @@ public class HelpEntity {
 
     public void setaLong(long aLong) {
         this.aLong = aLong;
+    }
+
+    public List<HelpEntity> getHelp() {
+        return help;
+    }
+
+    public void setHelp(List<HelpEntity> help) {
+        this.help = help;
     }
 }
 

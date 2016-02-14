@@ -12,22 +12,37 @@ import com.example.javier.geohelp.R;
 /**
  * Created by javier on 13/02/2016.
  */
-public class HelpSomeoneActivity extends AbstractActivity<HelpSomeonePresenter> implements HelpSomeoneView{
+public class HelpSomeoneActivity extends AbstractActivity<HelpSomeonePresenter> {
 
+//    HelpEntity helpEntity=new HelpEntity();
+
+//    private HelpListAdapter adapter;
+    //private RecyclerView recycler;
     private TabLayout tabLayout;
-
-    HelpSomeoneView helpSomeoneView;
+//    private RecyclerView.LayoutManager lManager;
+//    private SwipeRefreshLayout refreshLayout;
+    private HelpSomeoneView helpSomeoneView;
     private HelpSomeonePresenterImpl helpSomeonePresenter;
 
     @Override
     protected HelpSomeonePresenter createPresenter() {
-        this.helpSomeonePresenter = new HelpSomeonePresenterImpl(this);
+        this.helpSomeonePresenter = new HelpSomeonePresenterImpl();
         return this.helpSomeonePresenter;
     }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.help_someone_layout);
+//        helpSomeonePresenter.refreshItems();
+//        recycler = (RecyclerView) findViewById(R.id.recycler);
+//        refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefresh);
+//
+//        lManager = new LinearLayoutManager(this);
+//        recycler.setLayoutManager(lManager);
+//
+//        adapter = new HelpListAdapter(helpEntity.getHelp());
+//        recycler.setAdapter(adapter);
+
 
         tabLayout = (TabLayout)findViewById(R.id.tab_layout_help_someone);
         tabLayout.addTab(tabLayout.newTab().setText(getResources().getString(R.string.title_tab_list)));
@@ -35,6 +50,15 @@ public class HelpSomeoneActivity extends AbstractActivity<HelpSomeonePresenter> 
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
+
+//        refreshLayout.setOnRefreshListener(
+//                new SwipeRefreshLayout.OnRefreshListener() {
+//                    @Override
+//                    public void onRefresh() {
+//                        helpSomeonePresenter.refreshItems();
+//                    }
+//                }
+//        );
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         final PageAdapterHelpSomeone adapter = new PageAdapterHelpSomeone
@@ -60,4 +84,17 @@ public class HelpSomeoneActivity extends AbstractActivity<HelpSomeonePresenter> 
 
 
     }
+
+
+    public HelpSomeonePresenterImpl getPresenter() {
+        return this.helpSomeonePresenter;
+    }
+
+    public void updatePresenter(HelpSomeoneView helpSomeoneView) {
+        this.helpSomeonePresenter.setView(helpSomeoneView);
+    }
+
+
+
+
 }
