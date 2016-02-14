@@ -4,7 +4,7 @@ import com.example.javier.geohelp.Activities.Entities.HelpEntity;
 import com.example.javier.geohelp.Activities.HelpSomeoneView;
 import com.example.javier.geohelp.Activities.Interactors.Events.GenericServerErrorEvent;
 import com.example.javier.geohelp.Activities.Interactors.Events.ListHelpEvent;
-import com.example.javier.geohelp.Activities.Interactors.RefreshListInteractor;
+import com.example.javier.geohelp.Activities.Interactors.refreshListInteractor;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class HelpSomeonePresenterImpl extends PresenterImpl implements Presenter
 
 
     public void refreshItems(){
-        new RefreshListInteractor().execute();
+        new refreshListInteractor().execute();
     }
 
     @Override
