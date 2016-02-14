@@ -2,7 +2,9 @@ package com.example.javier.geohelp.Activities;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 
+import com.example.javier.geohelp.Activities.Adapters.PageAdapterHelpSomeone;
 import com.example.javier.geohelp.Activities.Presenters.HelpSomeonePresenter;
 import com.example.javier.geohelp.Activities.Presenters.HelpSomeonePresenterImpl;
 import com.example.javier.geohelp.R;
@@ -32,5 +34,30 @@ public class HelpSomeoneActivity extends AbstractActivity<HelpSomeonePresenter> 
         tabLayout.addTab(tabLayout.newTab().setText(getResources().getString(R.string.title_tab_map)));
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        final PageAdapterHelpSomeone adapter = new PageAdapterHelpSomeone
+                (getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
     }
 }
