@@ -4,8 +4,8 @@ import com.example.javier.geohelp.Activities.Entities.HelpEntity;
 import com.example.javier.geohelp.Activities.Interactors.Events.ListHelpEvent;
 import com.example.javier.geohelp.Activities.Utils.GeoHelpConstans;
 import com.example.javier.geohelp.Activities.Utils.LogUtil;
-import com.firebase.client.DataSnapshot;
 import com.example.javier.geohelp.R;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
@@ -62,11 +62,36 @@ public class HelpDomain {
 
     public boolean refreshList () {
 
-        ListHelpEvent listHelpEvent = new ListHelpEvent();
-        listHelpEvent.setTAG("");
-        listHelpEvent.setHelpEntityList(poblateList());
-        EventBus.getDefault().post(listHelpEvent);
-        return true;
+        final List<HelpEntity> listHelpEntity= new ArrayList<>();
+        try {
+            //Buscamos el maximo identificado en firebase
+            firebase = firebase.child(GeoHelpConstans.HELPS);
+            Query queryRef = firebase.orderByKey();
+            queryRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        listHelpEntity.add(postSnapshot.getValue(HelpEntity.class));
+                    }
+                    ListHelpEvent listHelpEvent = new ListHelpEvent();
+                    listHelpEvent.setTAG("");
+                    listHelpEvent.setHelpEntityList(listHelpEntity);
+                    EventBus.getDefault().post(listHelpEvent);
+                }
+
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {
+                    LogUtil.e("[HelpDomain:refreshList]", firebaseError.getMessage());
+                }
+            });
+
+
+            return false;
+        }catch (Exception ex) {
+            return false;
+        }
+
+
 
     }
 
