@@ -13,19 +13,25 @@
         android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/parent_need_help_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:padding="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <RelativeLayout
             android:id="@+id/layout_help_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
 
             <com.example.javier.geohelp.Activities.Components.GeoHelpEditText
-                android:id="@+id/correo_parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -33,30 +39,25 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/title_help"
+                    android:id="@+id/editext_name_help"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Nombre de ayuda"
-                    android:textColorHint="@color/GeoHelp_primary_dark"
+                    android:textSize="15sp"
                     />
             </com.example.javier.geohelp.Activities.Components.GeoHelpEditText>
         </RelativeLayout>
 
 
-        <View
-            android:id="@+id/separator1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/GeoHelp_divider"
-            android:layout_below="@id/layout_help_name"/>
-
         <RelativeLayout
-            android:id="@+id/layout_help_description"
+            android:id="@+id/layout_description_help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@id/separator1">
+            android:layout_below="@id/layout_help_name"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
 
             <com.example.javier.geohelp.Activities.Components.GeoHelpEditText
                 android:layout_width="wrap_content"
@@ -66,10 +67,11 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/editext_description_help"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Descripcción"
+                    android:textSize="15sp"
                     android:textColorHint="@color/GeoHelp_primary_dark"
                     />
             </com.example.javier.geohelp.Activities.Components.GeoHelpEditText>
@@ -79,25 +81,48 @@
             android:id="@+id/separator2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/GeoHelp_divider"
-            android:layout_below="@id/layout_help_description"/>
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@color/GeoHelp_primary"
+            android:layout_below="@id/layout_description_help"/>
 
         <RelativeLayout
-            android:id="@+id/layout_help_description2"
-            android:padding="2dp"
-            android:layout_margin="2dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:id="@+id/layout_help_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@id/separator2">
-            <TextView
-                android:id="@+id/texto_hello_world"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Descripcion" />
+            android:layout_below="@id/separator2"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
 
+            <com.example.javier.geohelp.Activities.Components.GeoHelpTextView
+                android:id="@+id/label_type_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Categoría"/>
+
+            <Spinner
+                android:id="@+id/spinner_type_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_type_help"></Spinner>
         </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/button_create_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Crear ayuda"
+            android:textSize="16sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@color/GeoHelp_primary"
+            android:layout_below="@id/layout_help_type"
+            android:layout_alignParentBottom="true"/>
 
 
     </RelativeLayout>

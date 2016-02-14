@@ -6,6 +6,12 @@ package com.example.javier.geohelp.Activities.Utils;
 public class GeoHelpConstans {
     //***URL
     public static final String URL_FIREBASE ="https://amber-torch-3957.firebaseio.com/";
+    //**Ayudas
+    public static final String HELPS = "helps";
+    public static final String HELP_ID = "id";
+
+    //**Tipos de ayuda
+    public static final String HELP_TYPE = "help_types";
 
     //** PREFERENCES U
 

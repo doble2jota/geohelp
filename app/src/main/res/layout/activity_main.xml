@@ -89,9 +89,9 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_help_someone"
                     android:text="@string/menu_help_someone"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     android:textColor="@color/white"
-                    custom:typefaceAsset="basictitlefont.ttf"/>
+                    custom:typefaceAsset="Roboto-Thin.ttf"/>
 
                 <ImageView
                     android:layout_width="40dp"
@@ -125,9 +125,9 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_help_me"
                     android:text="@string/menu_help_me"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     android:textColor="@color/white"
-                    custom:typefaceAsset="basictitlefont.ttf"/>
+                    custom:typefaceAsset="Roboto-Thin.ttf"/>
 
                 <ImageView
                     android:layout_width="40dp"
@@ -160,9 +160,9 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_my_helps"
                     android:text="@string/menu_my_helps"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     android:textColor="@color/white"
-                    custom:typefaceAsset="basictitlefont.ttf"/>
+                    custom:typefaceAsset="Roboto-Thin.ttf"/>
 
                 <ImageView
                     android:layout_width="40dp"
@@ -194,9 +194,9 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_settings"
                     android:text="@string/menu_settings"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     android:textColor="@color/white"
-                    custom:typefaceAsset="basictitlefont.ttf"/>
+                    custom:typefaceAsset="Roboto-Thin.ttf"/>
 
                 <ImageView
                     android:layout_width="40dp"

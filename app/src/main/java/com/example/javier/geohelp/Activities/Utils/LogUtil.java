@@ -14,4 +14,10 @@ public class LogUtil {
             Log.d(s1,s2);
         }
     }
+
+    public static void e(String s1,String s2){
+        if (printMesages){
+            Log.e(s1,s2);
+        }
+    }
 }
