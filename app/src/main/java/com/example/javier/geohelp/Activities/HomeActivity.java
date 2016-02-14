@@ -24,6 +24,7 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
     private String FIREBASE_PASS = "pass";
     private RelativeLayout layout_settings;
     private RelativeLayout layout_help_someone;
+    private RelativeLayout layout_help_me;
 
     Firebase firebase;
     Firebase firebase1;
@@ -47,18 +48,20 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        super.setTextToolbar(R.string.title_home, R.color.background_floating_material_dark);
+        super.setTextToolbar(R.string.title_home, R.color.GeoHelp_primary);
 
         slideUp = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
         slideDown = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 
         layout_help_someone=(RelativeLayout)findViewById(R.id.layout_help_someone);
+        layout_help_me = (RelativeLayout) findViewById(R.id.layout_help_me);
         layout_settings= (RelativeLayout)findViewById(R.id.layout_settings);
         myView= (ImageView)findViewById(R.id.edit_my_profile);
         myView2= (ImageView)findViewById(R.id.img_my_profile);
 
         layout_help_someone.setOnClickListener(this);
         layout_settings.setOnClickListener(this);
+        layout_help_me.setOnClickListener(this);
         myView.setOnClickListener(this);
         myView2.setOnClickListener(this);
 
@@ -126,6 +129,8 @@ public class HomeActivity extends AbstractActivity<HomePresenter> implements Hom
             case R.id.layout_settings:
                 goToActivity(SettingsActivity.class);
                 break;
+            case R.id.layout_help_me:
+                goToActivity(NeedHelpActivity.class);
             default:
                 break;
         }
