@@ -23,23 +23,7 @@ public class HelpEntity {
     private String category;
     private long aLat;
     private long aLong;
-
-    public int getIdImagen() {
-        return idImagen;
-    }
-
-    public void setIdImagen(int idImagen) {
-        this.idImagen = idImagen;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
+    private String dateCreation;
     private int idImagen;
 
 
@@ -118,6 +102,30 @@ public class HelpEntity {
 
     public void setHelp(List<HelpEntity> help) {
         this.help = help;
+    }
+
+    public String getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(String dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public int getIdImagen() {
+        return idImagen;
+    }
+
+    public void setIdImagen(int idImagen) {
+        this.idImagen = idImagen;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
 

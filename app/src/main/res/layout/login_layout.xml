@@ -6,6 +6,8 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingRight="25dp"
+    android:paddingLeft="25dp"
     android:background="@color/GeoHelp_primary">
 
 
@@ -17,26 +19,37 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="40dp"
-        android:text="CACACACA"
+        android:text="@string/app_name"
         android:paddingTop="20dp"
-        android:paddingBottom="30dp"
+        android:paddingBottom="40dp"
         custom:typefaceAsset="Roboto-Bold.ttf.ttf"/>
 
     <RelativeLayout
         android:layout_below="@+id/geo_login_name"
         android:id="@+id/layout_username"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:paddingBottom="15dp"
         android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/image_profile"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_person_white_48dp"
+            android:layout_alignBottom="@+id/correo_parent"
+            android:layout_alignParentStart="true" />
 
         <com.example.javier.geohelp.Activities.Components.EmailEditText
             android:id="@+id/correo_parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/image_profile">
+
 
             <EditText
                 android:id="@+id/user_name"
@@ -57,12 +70,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/image_pass"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_lock_white_48dp"
+            android:layout_alignBottom="@+id/text_password"
+            android:layout_alignParentLeft="true"/>
+
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/rw"
+            android:id="@+id/text_password"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true">
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/image_pass">
 
             <EditText
                 android:id="@+id/password"
@@ -82,25 +108,36 @@
 
     <LinearLayout
         android:layout_below="@id/layout_pass"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
         android:id="@+id/relativeLayout">
-        <Button
-
-            android:id="@+id/create_user"
-            android:layout_width="wrap_content"
-            android:text="create"
-            android:layout_height="wrap_content" />
-
 
         <Button
             android:id="@+id/login_user"
             android:text="login"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/password"
-            />
+            android:textColor="@color/white"
+            android:background="@color/GeoHelp_primary_dark"/>
+
+        <TextView
+            android:id="@+id/create_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/GeoHelp_primary_light"
+            android:text="¿No tienes cuenta? Registrate"/>
+
+        <!--<Button-->
+            <!--android:id="@+id/create_user"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:text="create"-->
+            <!--android:layout_height="wrap_content" />-->
 
     </LinearLayout>
 
