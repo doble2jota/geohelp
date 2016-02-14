@@ -16,7 +16,7 @@
 
     <!-- Login y registro -->
 
-
+    <string name="ask_to_register">¿No tienes cuenta? Registrate </string>
     <string name="create_user_password">Contraseña</string>
     <string name="create_user_confirm_password">Confirmar contraseña</string>
     <string name="create_user_lasttname">Apellidos</string>
@@ -35,4 +35,5 @@
     <!-- Help someone-->
     <string name="title_tab_list">Lista</string>
     <string name="title_tab_map">Mapa</string>
+
 </resources>

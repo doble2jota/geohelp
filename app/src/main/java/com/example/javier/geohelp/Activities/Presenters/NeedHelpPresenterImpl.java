@@ -20,11 +20,12 @@ public class NeedHelpPresenterImpl extends PresenterImpl implements Presenter, N
     }
 
     @Override
-    public void createHelp(String name, String description, String tipo, String latString, String longString) {
+    public void createHelp(String name, String description, String category, String latString, String longString) {
         //TODO cambiar la manera de crear la entidad, no le pasamos todos los parametros;
         HelpEntity helpEntity = new HelpEntity();
         helpEntity.setNombre(name);
         helpEntity.setDescripción(description);
+        helpEntity.setCategory(category);
         new HelpInteractor(helpEntity).execute();
     }
 

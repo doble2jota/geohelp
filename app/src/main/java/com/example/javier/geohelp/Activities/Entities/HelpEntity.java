@@ -19,7 +19,6 @@ public class HelpEntity {
     private String idUser;
     private String nombre;
     private String descripción;
-    private int tipo;
     private String category;
     private long aLat;
     private long aLong;
@@ -30,12 +29,12 @@ public class HelpEntity {
     public HelpEntity() {
     }
 
-    public HelpEntity(int id, String idUser, String nombre, String descripción, int tipo, long aLat, long aLong) {
+    public HelpEntity(int id, String idUser, String nombre, String descripción, String category, long aLat, long aLong) {
         this.id = id;
         this.idUser = idUser;
         this.nombre = nombre;
         this.descripción = descripción;
-        this.tipo = tipo;
+        this.category = category;
         this.aLat = aLat;
         this.aLong = aLong;
     }
@@ -72,13 +71,6 @@ public class HelpEntity {
         this.descripción = descripción;
     }
 
-    public int getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
-    }
 
     public long getaLat() {
         return aLat;

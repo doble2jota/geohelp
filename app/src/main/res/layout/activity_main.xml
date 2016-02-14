@@ -77,10 +77,13 @@
 
                 <ImageView
                     android:id="@+id/img_help_someone"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"></ImageView>
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_favorite_border_white_48dp"/>
 
                 <com.example.javier.geohelp.Activities.Components.MenuTextView
                     android:id="@+id/text_help_someone"
@@ -89,9 +92,9 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_help_someone"
                     android:text="@string/menu_help_someone"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
-                    custom:typefaceAsset="Roboto-Thin.ttf"/>
+                    custom:typefaceAsset="Roboto-Regular.ttf"/>
 
                 <ImageView
                     android:layout_width="40dp"
@@ -113,10 +116,13 @@
 
                 <ImageView
                     android:id="@+id/img_help_me"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"></ImageView>
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_loyalty_white_48dp"/>
 
                 <com.example.javier.geohelp.Activities.Components.MenuTextView
                     android:id="@+id/text_help_me"
@@ -125,9 +131,9 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_help_me"
                     android:text="@string/menu_help_me"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
-                    custom:typefaceAsset="Roboto-Thin.ttf"/>
+                    custom:typefaceAsset="Roboto-Regular.ttf"/>
 
                 <ImageView
                     android:layout_width="40dp"
@@ -148,10 +154,13 @@
 
                 <ImageView
                     android:id="@+id/img_my_helps"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"></ImageView>
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_grade_white_48dp"/>
 
                 <com.example.javier.geohelp.Activities.Components.MenuTextView
                     android:id="@+id/text_my_helps"
@@ -160,9 +169,9 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_my_helps"
                     android:text="@string/menu_my_helps"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
-                    custom:typefaceAsset="Roboto-Thin.ttf"/>
+                    custom:typefaceAsset="Roboto-Regular.ttf"/>
 
                 <ImageView
                     android:layout_width="40dp"
@@ -183,10 +192,13 @@
 
                 <ImageView
                     android:id="@+id/img_settings"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"></ImageView>
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_settings_white_48dp"/>
 
                 <com.example.javier.geohelp.Activities.Components.MenuTextView
                     android:layout_width="wrap_content"
@@ -194,9 +206,9 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_settings"
                     android:text="@string/menu_settings"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
-                    custom:typefaceAsset="Roboto-Thin.ttf"/>
+                    custom:typefaceAsset="Roboto-Regular.ttf"/>
 
                 <ImageView
                     android:layout_width="40dp"

@@ -1,5 +1,7 @@
 package com.example.javier.geohelp.Activities;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -68,13 +70,35 @@ public class LoginActivity extends AbstractActivity<LoginPresenter> implements L
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.login_user){
-                UserEntity userEntity = new UserEntity(username.getText().toString(),pass.getText().toString());
-                loginPresenter.loginUser(userEntity);
+            v.setOnClickListener(null);
+            int colorFrom = getResources().getColor(R.color.GeoHelp_primary_dark);
+            int colorTo = getResources().getColor(R.color.GeoHelp_primary_light);
+            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
+            ValueAnimator textAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorTo, colorFrom);
+            colorAnimation.setDuration(250); // milliseconds
+            textAnimation.setDuration(250);
+            colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animator) {
+                    loginUser.setBackgroundColor((int) animator.getAnimatedValue());
+                }
+
+            });
+            textAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animator) {
+                    loginUser.setTextColor((int) animator.getAnimatedValue());
+                }
+
+            });
+            loginUser.setText("Entrando...");
+            colorAnimation.start();
+            textAnimation.start();
+            UserEntity userEntity = new UserEntity(username.getText().toString(),pass.getText().toString());
+            loginPresenter.loginUser(userEntity);
+
         }else if(v.getId() == R.id.create_user){
             goToActivityCreateUser();
-        /*
-            UserEntity userEntity = new UserEntity(username.getText().toString(),pass.getText().toString());
-            loginPresenter.createUser(userEntity);*/
         }
     }
 

@@ -36,12 +36,20 @@ public class HelpDomain {
             queryRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                        HelpEntity maxHelp = postSnapshot.getValue(HelpEntity.class);
-                        LogUtil.d("[HelTypeDomain]", "MAX ID: " + maxHelp.getId());
-                        helpEntity.setId(maxHelp.getId()+1);
+                    if (dataSnapshot.getChildrenCount() == 0) {
+                        LogUtil.d("[HelTypeDomain]", "MAX ID: " + 1);
+                        helpEntity.setId(1);
                         firebase.child(Integer.toString(helpEntity.getId())).setValue(helpEntity);
                     }
+                    else {
+                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                            HelpEntity maxHelp = postSnapshot.getValue(HelpEntity.class);
+                            LogUtil.d("[HelTypeDomain]", "MAX ID: " + maxHelp.getId());
+                            helpEntity.setId(maxHelp.getId()+1);
+                            firebase.child(Integer.toString(helpEntity.getId())).setValue(helpEntity);
+                        }
+                    }
+
                 }
 
                 @Override
