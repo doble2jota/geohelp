@@ -69,7 +69,7 @@ public class HelpListAdapter extends RecyclerView.Adapter<HelpListAdapter.HelpVi
     @Override
     public void onBindViewHolder(HelpViewHolder viewHolder, int i) {
        // viewHolder.userImage.setImageResource(help.get(i).getIdImagen());
-        viewHolder.title.setText(help.get(i).getNombre());
+        viewHolder.title.setText(help.get(i).getName());
         viewHolder.category.setText((help.get(i).getCategory()));
     }
 }

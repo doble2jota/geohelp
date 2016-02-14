@@ -38,9 +38,9 @@ public class TabFragmentList extends Fragment implements SwipeRefreshLayout.OnRe
 
         List<HelpEntity> listHelp= new ArrayList<HelpEntity>();
         HelpEntity helpEntity= new HelpEntity();
-        helpEntity.setNombre("prueba1");
+        helpEntity.setName("prueba1");
         helpEntity.setCategory("categoria 1");
-        helpEntity.setIdImagen(R.drawable.ic_profile);
+        helpEntity.setIdImage(R.drawable.ic_profile);
         listHelp.add(helpEntity);
 
         recycler = (RecyclerView) rootView.findViewById(R.id.recycler);

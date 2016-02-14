@@ -56,6 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Correo Electrónico"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/white"
                 android:text="prueba@prueba.com"
                 android:textColorHint="@color/white"
@@ -66,7 +67,7 @@
     <RelativeLayout
         android:layout_below="@+id/layout_username"
         android:id="@+id/layout_pass"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true">
 
@@ -94,6 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="prueba"
+                android:inputType="textVisiblePassword"
                 android:textColorHint="@color/white"
                 android:textColor="@color/white"
                 android:hint="Contraseña"

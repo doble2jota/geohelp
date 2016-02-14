@@ -10,6 +10,12 @@ public class GeoHelpConstans {
     public static final String HELPS = "helps";
     public static final String HELP_ID = "id";
 
+    //**Estados de las tareas
+    public static final int NUEVO = 0;
+    public static final int EN_PROCESO = 1;
+    public static final int FINALIZADO = 2;
+
+
     //**Tipos de ayuda
     public static final String HELP_TYPE = "help_types";
 

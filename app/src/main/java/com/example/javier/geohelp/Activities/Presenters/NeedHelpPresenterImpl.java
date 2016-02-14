@@ -6,7 +6,8 @@ import com.example.javier.geohelp.Activities.Interactors.Events.HelpTypeEvent;
 import com.example.javier.geohelp.Activities.Interactors.HelpInteractor;
 import com.example.javier.geohelp.Activities.Interactors.HelpTypesInteractor;
 import com.example.javier.geohelp.Activities.NeedHelpView;
-import com.example.javier.geohelp.Activities.Utils.LogUtil;
+import com.example.javier.geohelp.Activities.Utils.GeoHelpConstans;
+import com.example.javier.geohelp.Activities.Utils.SharedPref;
 
 /**
  * Created by raquel on 13/02/2016.
@@ -23,9 +24,12 @@ public class NeedHelpPresenterImpl extends PresenterImpl implements Presenter, N
     public void createHelp(String name, String description, String category, String latString, String longString) {
         //TODO cambiar la manera de crear la entidad, no le pasamos todos los parametros;
         HelpEntity helpEntity = new HelpEntity();
-        helpEntity.setNombre(name);
-        helpEntity.setDescripción(description);
+        helpEntity.setName(name);
+        helpEntity.setDescription(description);
         helpEntity.setCategory(category);
+        helpEntity.setState(GeoHelpConstans.NUEVO);
+        SharedPref prefs = new SharedPref();
+        helpEntity.setIdUser(prefs.getUserUUID());
         new HelpInteractor(helpEntity).execute();
     }
 

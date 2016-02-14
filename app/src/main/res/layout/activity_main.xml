@@ -97,8 +97,8 @@
                     custom:typefaceAsset="Roboto-Regular.ttf"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/ic_direction"></ImageView>
@@ -112,7 +112,7 @@
                 android:layout_weight="1"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:background="@color/green_soft">
+                android:background="@color/GeoHelp_primary_dark">
 
                 <ImageView
                     android:id="@+id/img_help_me"
@@ -136,8 +136,8 @@
                     custom:typefaceAsset="Roboto-Regular.ttf"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/ic_direction"></ImageView>
@@ -174,8 +174,8 @@
                     custom:typefaceAsset="Roboto-Regular.ttf"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/ic_direction"></ImageView>
@@ -211,8 +211,8 @@
                     custom:typefaceAsset="Roboto-Regular.ttf"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/ic_direction"></ImageView>

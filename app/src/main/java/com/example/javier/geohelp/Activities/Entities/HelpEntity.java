@@ -17,23 +17,24 @@ public class HelpEntity {
     List<HelpEntity> help;
     private int id;
     private String idUser;
-    private String nombre;
-    private String descripción;
+    private String name;
+    private String description;
     private String category;
     private long aLat;
     private long aLong;
     private String dateCreation;
-    private int idImagen;
+    private int idImage;
+    private int state;
 
 
     public HelpEntity() {
     }
 
-    public HelpEntity(int id, String idUser, String nombre, String descripción, String category, long aLat, long aLong) {
+    public HelpEntity(int id, String idUser, String name, String descripción, String category, long aLat, long aLong) {
         this.id = id;
         this.idUser = idUser;
-        this.nombre = nombre;
-        this.descripción = descripción;
+        this.name = name;
+        this.description = descripción;
         this.category = category;
         this.aLat = aLat;
         this.aLong = aLong;
@@ -55,20 +56,20 @@ public class HelpEntity {
         this.idUser = idUser;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 
@@ -104,20 +105,28 @@ public class HelpEntity {
         this.dateCreation = dateCreation;
     }
 
-    public int getIdImagen() {
-        return idImagen;
-    }
-
-    public void setIdImagen(int idImagen) {
-        this.idImagen = idImagen;
-    }
-
     public String getCategory() {
         return category;
     }
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getIdImage() {
+        return idImage;
+    }
+
+    public void setIdImage(int idImage) {
+        this.idImage = idImage;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 }
 

@@ -41,4 +41,10 @@ public class SharedPref {
         return prefs.contains(key);
     }
 
+    public String getUserUUID() {
+        context = GeoHelpApplication.get().getApplicationContext();
+        prefs = context.getSharedPreferences(USER_DATA, Context.MODE_PRIVATE);
+        return prefs.getString(GeoHelpConstans.USER_UID,"");
+    }
+
 }

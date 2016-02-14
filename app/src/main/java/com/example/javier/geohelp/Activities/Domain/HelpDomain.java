@@ -107,14 +107,14 @@ public class HelpDomain {
     private List<HelpEntity> poblateList(){
         List<HelpEntity> listHelp= new ArrayList<HelpEntity>();
         HelpEntity helpEntity= new HelpEntity();
-        helpEntity.setNombre("prueba1");
+        helpEntity.setName("prueba1");
         helpEntity.setCategory("categoria 1");
-        helpEntity.setIdImagen(R.drawable.ic_profile);
+        helpEntity.setIdImage(R.drawable.ic_profile);
         listHelp.add(helpEntity);
         HelpEntity helpEntity2= new HelpEntity();
-        helpEntity2.setNombre("prueba2");
+        helpEntity2.setName("prueba2");
         helpEntity2.setCategory("categoria2 ");
-        helpEntity2.setIdImagen(R.drawable.ic_profile);
+        helpEntity2.setIdImage(R.drawable.ic_profile);
         listHelp.add(helpEntity2);
 
         return listHelp;
